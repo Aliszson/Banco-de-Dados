@@ -66,10 +66,10 @@ CREATE TABLE receita (
 CREATE TABLE item (
     id_item INTEGER PRIMARY KEY not NULL,
     nome VARCHAR(50) UNIQUE not NULL,
-  	nome_receita VARCHAR(50),
+    nome_receita VARCHAR(50),
     raridade VARCHAR(20) CHECK(raridade in('padrao', 'prata', 'ouro', 'iridio')),
     ouro_venda INTEGER,
-  	FOREIGN KEY (nome_receita) REFERENCES receita(nome) ON DELETE CASCADE on UPDATE CASCADE
+    FOREIGN KEY (nome_receita) REFERENCES receita(nome) ON DELETE CASCADE on UPDATE CASCADE
 );
 
 CREATE TABLE compravel (
@@ -116,7 +116,7 @@ CREATE TABLE cultivavel (
 CREATE TABLE peixe (
     id_item INTEGER PRIMARY KEY not NULL,
     tamanho FLOAT not NULL,
-  	clima VARCHAR(20) CHECK(clima in('qualquer', 'sol', 'chuva', 'vento')),
+    clima VARCHAR(20) CHECK(clima in('qualquer', 'sol', 'chuva', 'vento')),
     estacao VARCHAR(20) CHECK(estacao in('todas','primavera', 'verao', 'outono', 'inverno')),
     localizacao VARCHAR(100) CHECK(localizacao in('oceano', 'rio', 'lago da floresta', 'lago da montanha', 'lago da ilha gengibre',
                                                  'lago do bosque', 'esgotos', 'pantano da bruxa', 'oceano da ilha gengibre', 'mina', 'deserto',
@@ -164,7 +164,7 @@ CREATE TABLE missao (
     origem VARCHAR(50) CHECK(origem in ('precisa-se de ajuda', 'historia', 'pedido especial',
                                         'pedido especial do sr.qi')),
     tempo INTEGER,
-  	ouro_receber INTEGER
+    ouro_receber INTEGER
 );
 
 CREATE TABLE estrutura (
@@ -356,7 +356,7 @@ VALUES
   (3, 'Cartão do Clube'),
   (4, 'Amuleto Especial'),
   (5, 'Chave de Caveira'),
- (6, 'Lupa'),
+  (6, 'Lupa'),
   (7, 'Talismã das Trevas'),
   (8, 'Tinta Mágica'),
   (9, 'Conhecimento do Urso'),
